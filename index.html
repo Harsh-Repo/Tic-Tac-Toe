@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <audio
+      id="fireworkSound"
+      src="audio\fireworks.mp3"
+      type="audio/mpeg"
+    ></audio>
+    <canvas
+      id="crackerCanvas"
+      width="800"
+      height="600"
+      style="position: absolute; top: 0; left: 0; z-index: 9"
+    ></canvas>
+  </head>
+  <body>
+    <div id="gameContainer">
+      <div id="statusArea" class="status">Player X's turn</div>
+      <div id="gameBoard" class="board">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+      </div>
+      <button id="restartButton">Restart Game</button>
+    </div>
+    <div id="scoreSheetContainer">
+      <h2>Score Sheet</h2>
+      <div id="scoreSheet">
+        <div class="score-entry">X's Wins: <span id="scoreX">0</span></div>
+        <div class="score-entry">O's Wins: <span id="scoreO">0</span></div>
+        <div>Draws: <span id="scoreDraw">0</span></div>
+        <!-- If tracking draw -->
+        <button id="endGameButton">End Game</button>
+      </div>
+    </div>
+    <!-- Add a summary container which will be displayed at the end of the game -->
+    <div id="summaryContainer" style="display: none">
+      <h2>Game Summary</h2>
+      <p>X's Wins: <span id="finalScoreX">0</span></p>
+      <p>O's Wins: <span id="finalScoreO">0</span></p>
+      <p>Draws: <span id="finalScoreDraw">0</span></p>
+      <!-- If tracking draws -->
+      <button onclick ="startNewGame()">Start New Game</button>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

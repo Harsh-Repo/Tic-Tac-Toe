@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000; /* Change this to your preferred background color */
+}
+
+#gameContainer {
+  float: left; /* Allows elements to line up side by side */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Use the full height of the viewport */
+}
+
+#scoreSheetContainer {
+  float: left; /* Aligns this container next to the game board */
+  width: 200px; /* Adjust width as needed */
+  margin-left: 20px; /* Space from the game container */
+  padding: 10px;
+  background-color: #1c1c1e; /* Adjust background color as needed */
+  border-radius: 10px;
+  color: #ffffff; /* Text color */
+}
+
+/* Clear float to ensure below elements are positioned correctly */
+.clearfix {
+  clear: both;
+}
+
+#summaryContainer {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  margin-top: 20px;
+  text-align: center;
+  /* Add additional styling as desired */
+}
+
+#summaryContainer button {
+  font-size: 15px;
+  background-color: #008080; /* Green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Outer shadow for 3D effect */ inset 0 4px 8px rgba(255, 255, 255, 0.1),
+    /* Inner top light */ inset 0 -4px 8px rgba(0, 0, 0, 0.6); /* Inner bottom shadow */
+  transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for pressed effect */
+}
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    100px
+  ); /* Creates a 3x3 grid with each cell 100px wide */
+  grid-template-rows: repeat(3, 100px); /* Each cell is also 100px tall */
+  gap: 10px; /* Spacing between cells */
+  justify-content: center; /* Center the grid horizontally */
+  align-content: center; /* Center the grid vertically */
+  margin: 20px; /* Margin around the game board */
+  position: relative;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #505050; /* Change cell background color */
+  color: #fff;
+  font-size: 2em;
+  /*border: 2px solid #1c1c1e;  Change cell border color */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+
+  /* 3D effect styling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Outer shadow */ inset 0 4px 8px rgba(255, 255, 255, 0.1),
+    /* Inner top light */ inset 0 -4px 8px rgba(0, 0, 0, 0.6); /* Inner bottom shadow */
+
+  transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for "pressed" effect */
+}
+.cell.active,
+.cell:hover {
+  background-color: #ff9f0a; /* Orange color for active state */
+  transform: translateY(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Smaller outer shadow for "pressed" effect */ inset 0 2px 4px
+      rgba(255, 255, 255, 0.1),
+    /* Adjust inner top light */ inset 0 -2px 4px rgba(0, 0, 0, 0.3); /* Adjust inner bottom shadow */
+}
+
+.cell.winning-cell {
+  background-color: #008080; /* Highlight color */
+  color: white; /* Text color for winning cells */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3); /* 3D effect */
+  transform: scale(1.1); /* Slightly larger to highlight */
+  z-index: 1; /* Make sure it's above other elements */
+}
+
+.status {
+  font-size: 1.5em;
+  margin: 20px 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+#restartButton {
+  font-size: 15px;
+  background-color: #ff9f0a; /* Button background color */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Outer shadow for 3D effect */ inset 0 4px 8px rgba(255, 255, 255, 0.1),
+    /* Inner top light */ inset 0 -4px 8px rgba(0, 0, 0, 0.6); /* Inner bottom shadow */
+  transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for pressed effect */
+}
+
+#restartButton:hover {
+  background-color: #d87c00;
+}
+
+.score-entry {
+  margin: 10px 0;
+}
+
+#endGameButton {
+  font-size: 15px;
+  background-color: #ff9f0a; /* Adjust button color as needed */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Outer shadow for 3D effect */ inset 0 4px 8px rgba(255, 255, 255, 0.1),
+    /* Inner top light */ inset 0 -4px 8px rgba(0, 0, 0, 0.6); /* Inner bottom shadow */
+  transition: transform 0.1s, box-shadow 0.1s; /* Smooth transition for pressed effect */
+}
+
+#endGameButton:hover,
+#restartButton:hover,
+#summaryContainer button:hover {
+  transform: translateY(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+    /* Smaller outer shadow for pressed effect */ inset 0 2px 4px
+      rgba(255, 255, 255, 0.1),
+    /* Adjust inner top light */ inset 0 -2px 4px rgba(0, 0, 0, 0.3); /* Adjust inner bottom shadow */
+}
+
+.cracker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none;
+}
+#crackerCanvas {
+  display: none; /* Initially hidden */
+}
+
+/* Add additional styles for your cracker animations here */
+/* You might use keyframes to create exploding effects */
