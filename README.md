@@ -26,7 +26,7 @@ So, whether you're here to enjoy a quick game or to delve into the coding aspect
 
 The `main.js` file is where the various components of our Tic-Tac-Toe game come together. It's responsible for initiating the game and managing the interactions between the player and the game logic.
 
-### The Role of `main.js` 🎬
+### The Role of `main.js`(./main.js) 🎬
 
 - **Kickstarts the Game:** When you load the game, `main.js` is the first script that runs, setting everything in motion.
 - **Listens to Your Moves:** Every click you make on the game board is captured here, determining the flow of the game.
