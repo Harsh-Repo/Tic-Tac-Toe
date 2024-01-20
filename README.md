@@ -2,6 +2,8 @@
 
 Welcome to our Tic-Tac-Toe game, a timeless classic that's been given a digital twist! This project is more than just a simple implementation of the well-loved game; it's a vibrant and interactive experience that brings together the charm of the traditional Tic-Tac-Toe with modern web technologies.
 
+[👉Play the Tic-Tac-Toe Game Here!](https://tic-tac-toe-0-1.netlify.app)
+
 ## What's the Game About? 🤔
 
 Tic-Tac-Toe, also known as Noughts and Crosses, is a strategy game for two players. The game is played on a 3x3 grid. Players take turns to mark a square with their symbol (either 'X' or 'O'). The first player to align three of their symbols vertically, horizontally, or diagonally wins the game! 🎉
@@ -224,6 +226,9 @@ We sincerely thank you for taking the time to explore our Tic-Tac-Toe game. Whet
 The beauty of coding is in creating something that not only functions well but also brings delight to those who interact with it. We hope our game does just that – offers a delightful experience, a brush with nostalgia, and a peek into the power of web development.
 
 Happy playing and happy coding!
+
+### Tags
+`#TicTacToe` `#JavaScript` `#HTML5` `#CSS3` `#WebDevelopment` `#InteractiveGame` `#Frontend` `#Tic-Tac-Toe`
 
 
 
